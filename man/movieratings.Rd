@@ -1,0 +1,37 @@
+\docType{data}
+\name{movieratings}
+\alias{movieratings}
+\title{Movie ratings database derived from data from IMDB.com}
+\format{A data frame with 58771 rows and 23 variables}
+\source{
+  Data obtained from Hadley Wickham.  The data in this
+  package contains only those movies not exceeding 400
+  minutes in length. \url{http://had.co.nz/data/movies/}.
+}
+\arguments{
+  \item{title}{Title of the movie}
+
+  \item{year}{Year the movie was released}
+
+  \item{length}{Length of movie (in minutes)}
+
+  \item{rating}{Average IMDB user rating}
+
+  \item{votes}{Number of IMDB users who rated the movie}
+
+  \item{r1-10}{Distribution of votes for each rating, to
+  mid point of nearest decile: 0 = no votes, 4.5 = 1-9%
+  votes, 14.5 = 11-19% of votes, etc. Due to rounding
+  errors these may not sum to 100.}
+
+  \item{mpaa}{MPAA rating}
+
+  \item{genre}{Binary variables indicating whether movie
+  belongs to any of the following genres: action,
+  animation, comedy, drama, documentary, romance, short}
+}
+\description{
+  A dataset containing movie ratings for 58,771 movies.
+}
+\keyword{datasets}
+

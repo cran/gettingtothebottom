@@ -1,0 +1,6 @@
+export(example.alpha)
+export(example.quadratic.approx)
+export(gdescent)
+export(plot_gradient)
+export(plot_iterates)
+export(plot_loss)

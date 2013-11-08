@@ -1,0 +1,149 @@
+\name{gdescent}
+\alias{gdescent}
+\title{Gradient Descent Algorithm}
+\usage{
+  gdescent(f, grad_f, X, y, alpha = 1e-06, iter = 3000,
+    liveupdates = FALSE, tol = 1e-06, intercept = TRUE,
+    autoscaling = TRUE)
+}
+\arguments{
+  \item{f}{objective function as a function of X, y, and b}
+
+  \item{grad_f}{gradient of f as a function of X,y, and b}
+
+  \item{X}{matrix of independent variables}
+
+  \item{y}{vector containing dependent variable}
+
+  \item{alpha}{(optional) step size for the algorithm}
+
+  \item{iter}{(optional) the number of iterations to
+  include in the algorithm}
+
+  \item{liveupdates}{(optional) if TRUE, the function will
+  print live updates showing the norm of the gradient
+  vector in each iteration}
+
+  \item{tol}{(optional) tolerance for determining
+  convergence}
+
+  \item{intercept}{(optional) if TRUE, the model includes
+  an estimate for the intercept}
+
+  \item{autoscaling}{(optional) if TRUE, the function will
+  automatically rescale the columns of X (divides each
+  element in X by the maximal element in that column)}
+}
+\description{
+  \code{gdescent} Performs gradient descent algorithm given
+  an objective function and a gradient for the objective
+  function
+}
+\examples{
+#--------------------------------------------------------
+# EXAMPLE 1 - A Simple Example
+#--------------------------------------------------------
+
+# Generate some data for a simple bivariate example
+set.seed(12345)
+x <- sample(seq(from = -1, to = 1, by = 0.1), size = 50, replace = TRUE)
+y <- 2*x + rnorm(50)
+plot(x,y)
+
+# Setting up for gradient descent
+X <- as.matrix(x)
+y <- as.vector(y)
+f <- function(X,y,b) {
+   (1/2)*norm(y-X\%*\%b,"F")^{2}
+}
+grad_f <- function(X,y,b) {
+   t(X)\%*\%(X\%*\%b - y)
+}
+
+# Run a simple gradient descent example
+simple_ex <- gdescent(f,grad_f,X,y,0.01)
+
+# We can compare our gradient descent results with what we get if we use the lm function
+lm(y~X)
+
+# Notice that the algorithm may diverge if the step size (alpha) is not small enough
+simple_ex2 <- gdescent(f,grad_f,X,y,alpha=0.05,liveupdates=TRUE)
+# The live updates show the norm of the gradient in each iteration.
+# We notice that the norm of the gradient diverges when alpha is not small enough.
+
+#--------------------------------------------------------
+# EXAMPLE 2 - Linear Regression & Feature Scaling
+#--------------------------------------------------------
+
+f <- function(X,y,b) {
+  (1/2)*norm(y-X\%*\%b,"F")^{2}
+}
+grad_f <- function(X,y,b) {
+  t(X)\%*\%(X\%*\%b - y)
+}
+
+data(moviebudgets)
+X <- as.matrix(moviebudgets$budget)
+y <- as.vector(moviebudgets$rating)
+movies1 <- gdescent(f,grad_f,X,y,1e-4,5000)
+
+# We can compare our gradient descent results with what we get if we use the lm function
+lm(y~X)
+
+# Compare the above result with what we get without feature scaling
+# Not run:
+# movies2 <- gdescent(f,grad_f,X,y,alpha=1e-19,iter=10000,liveupdates=TRUE,autoscaling=FALSE)
+## Note that running the gradient descent algorithm on unscaled column vectors
+## requires a much smaller step size and many more iterations.
+
+#--------------------------------------------------------
+# EXAMPLE 3 - Multivariate Linear Regression
+#--------------------------------------------------------
+
+f <- function(X,y,b) {
+  (1/2)*norm(y-X\%*\%b,"F")^{2}
+}
+grad_f <- function(X,y,b) {
+  t(X)\%*\%(X\%*\%b - y)
+}
+
+data(baltimoreyouth)
+B <- baltimoreyouth
+X <- matrix(c(B$farms11,B$susp11,B$sclemp11,B$abshs11), nrow=nrow(B), byrow=FALSE)
+y <- as.vector(B$compl11)
+meals_graduations <- gdescent(f,grad_f,X,y,0.01,12000)
+
+# We can compare our gradient descent results with what we get if we use the lm function
+lm(y~X)
+
+#--------------------------------------------------------
+# EXAMPLE 4 - Logistic Regression
+#--------------------------------------------------------
+
+set.seed(12345)
+n <- 100
+p <- 10
+X <- matrix(rnorm(n*p),n,p)
+b <- matrix(rnorm(p),p,1)
+e <- 0.5*matrix(rnorm(n),n,1)
+z <- X\%*\%b + e
+y <- as.vector((plogis(z) <= runif(n)) + 0)
+
+l <- function(X,y,b) {
+  -t(y)\%*\%(X\%*\%b) + sum(log(1+exp(X\%*\%b)))
+}
+grad_l <- function(X,y,b) {
+  -t(X)\%*\%(y-plogis(X\%*\%b))
+}
+alpha = 1/(0.25*svd(cbind(1,X))$d[1]**2)
+
+# Use gradient descent algorithm to solve logistic regression problem
+logistic_ex <- gdescent(l,grad_l,X,y,alpha=alpha,iter=15000)
+
+# Use glm function to solve logistic regression problem
+glm(y~X, family=binomial)
+}
+\author{
+  Jocelyn T. Chi
+}
+

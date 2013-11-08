@@ -1,0 +1,157 @@
+\docType{data}
+\name{baltimoreyouth}
+\alias{baltimoreyouth}
+\title{Baltimore Youth Indicators - 2010 and 2011}
+\format{A data frame with 55 rows and 79 variables}
+\source{
+  Data obtained from the Baltimore Neighborhood Indicators
+  Alliance using the Children and Family Health &
+  Well-Being and Education indicators.
+  \url{http://www.bniajfi.org/data_downloads}
+}
+\arguments{
+  \item{CSA2010}{Name of Community Statistical Areas in
+  2010}
+
+  \item{eattendXX}{Number of Students Ever Enrolled 1st -
+  5th Grade}
+
+  \item{mattendXX}{Number of Students Ever Enrolled 6th -
+  8th Grade}
+
+  \item{heattendXX}{Number of Students Ever Enrolled 9th -
+  12th Grade}
+
+  \item{eenrolXX}{Number of Students Enrolled in 1st - 5th
+  Grade}
+
+  \item{menrolXX}{Number of Students Enrolled in 6th - 8th
+  Grade}
+
+  \item{henrolXX}{Number of Students Enrolled in 9th - 12th
+  Grade}
+
+  \item{aastudXX}{Percent of Students that are African
+  American}
+
+  \item{wstudXX}{Percent of Students that are White
+  (non-Hispanic)}
+
+  \item{hstudXX}{Percent of Students that are Hispanic}
+
+  \item{abseXX}{Percent of 1st-5th Grade Students that are
+  Chronically Absent (Missing at least 20 days)}
+
+  \item{absmdXX}{Percent of 6th-8th Grade Students that are
+  Chronically Absent (Missing at least 20 days)}
+
+  \item{abshsXX}{Percent of 9th-12th Grade Students that
+  are Chronically Absent (Missing at least 20 days)}
+
+  \item{suspXX}{Percentage of Students Suspended or
+  Expelled During School Year}
+
+  \item{farmsXX}{Percentage of Students Receiving Free or
+  Reduced Meals}
+
+  \item{spedXX}{Percentage of Students Enrolled in Special
+  Education Programs}
+
+  \item{readyXX}{Kindergarten School Readiness}
+
+  \item{3mathXX}{Percentage of 3rd Grade Students Passing
+  MSA Math}
+
+  \item{3readXX}{Percentage of 3rd Grade Students Passing
+  MSA Reading}
+
+  \item{5mathXX}{Percentage of 5th Grade Students Passing
+  MSA Math}
+
+  \item{5readXX}{Percentage of 5th Grade Students Passing
+  MSA Reading}
+
+  \item{8mathXX}{Percentage of 8th Grade Students Passing
+  MSA Math}
+
+  \item{8readXX}{Percentage of 8th Grade Students Passing
+  MSA Reading}
+
+  \item{hsaengXX}{Percentage of Students Passing H.S.A.
+  English}
+
+  \item{hsabioXX}{Percentage of Students Passing H.S.A.
+  Biology}
+
+  \item{hsagovXX}{Percentage of Students Passing H.S.A.
+  Government}
+
+  \item{hsaalgXX}{Percentage of Students Passing H.S.A.
+  Algebra}
+
+  \item{dropXX}{High School Dropout/Withdrawl Rate}
+
+  \item{complXX}{High School Completion Rate}
+
+  \item{sclswXX}{Percent of Students Switching Schools
+  within School Year}
+
+  \item{sclempXX}{Percentage of Population aged 16-19 in
+  School and/or Employed}
+
+  \item{teenbirXX}{Teen Birth Rate per 1,000 Females (aged
+  15-19)}
+
+  \item{termbirXX}{Percent of Births Delivered at Term
+  (37-42 Weeks)}
+
+  \item{birthwtXX}{Percent of Babies Born with a
+  Satisfactory Birth Weight}
+
+  \item{prenatalXX}{Percent of Births Where the Mother
+  Received Early Prenatal Care (First Trimester)}
+
+  \item{leadtestXX}{Number of Children (aged 0-6) Tested
+  for Elevated Blood Lead Levels}
+
+  \item{ebllXX}{Percent of Children (aged 0-6) with
+  Elevated Blood Lead Levels}
+
+  \item{leadvXX}{Percent of Lead Violations per 1,000
+  Residential Units}
+
+  \item{tanfXX}{Percent of Families Receiving TANF}
+
+  \item{liquorXX}{Liquor Outlet density (per 1,000
+  Residents)}
+
+  \item{fastfdXX}{Fast Food Outlet Density (per 1,000
+  Residents)}
+
+  \item{LifeExpXX}{Life Expectancy}
+
+  \item{mort1_XX}{Mortality by Age (Less than 1 year old)}
+
+  \item{mort14_XX}{Mortality by Age (1-14 years old)}
+
+  \item{mort24_XX}{Mortality by Age (15-24 years old)}
+
+  \item{mort44_XX}{Mortality by Age (25-44 years old)}
+
+  \item{mort64_XX}{Mortality by Age (45-64 years old)}
+
+  \item{mort84_XX}{Mortality by Age (65-84 years old)}
+
+  \item{mort85_XX}{Mortality by Age (85 and over)}
+}
+\description{
+  Data from the 2011 release of Baltimore's Community
+  Health Profiles and Healthy Baltimore 2015 Safe Homes and
+  Families indicators. Data provided by the Maryland
+  Department of Health and Mental Hygiene, Maryland
+  Department of the Environment, Baltimore Substance Abuse
+  Systems (BSAS), the Baltimore City Health Department, and
+  the United States Bureau of the Census
+}
+\keyword{datasets}
+

@@ -1,0 +1,25 @@
+\name{example.quadratic.approx}
+\alias{example.quadratic.approx}
+\title{Gradient Descent Algorithm - Plots Depicting How Different Choices of Alpha Result in Differing Quadratic Approximations}
+\usage{
+  example.quadratic.approx(alpha1 = 0.01, alpha2 = 0.12)
+}
+\arguments{
+  \item{alpha1}{A smaller step-size for the gradient
+  descent algorithm.}
+
+  \item{alpha2}{A larger step-size for the gradient descent
+  algorithm.  (alpha2 > alpha1)}
+}
+\description{
+  \code{example.quadratic.approx} Shows how the quadratic
+  approximations for the function in Example 1 change with
+  choice of alpha.
+}
+\examples{
+example.quadratic.approx(alpha1=0.01, alpha2=0.12)
+}
+\author{
+  Jocelyn T. Chi
+}
+
