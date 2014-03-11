@@ -1,0 +1,41 @@
+\name{plot_spect}
+\alias{plot_spect}
+\title{MM Algorithm - Plotting the Spectroscopic Signal}
+\usage{
+  plot_spect(n, y, X, b, nnm)
+}
+\arguments{
+  \item{n}{Number of samples}
+
+  \item{nnm}{NNM object from generate_nnm function}
+
+  \item{y}{Nonnegative response}
+
+  \item{X}{Nonnegative design matrix}
+
+  \item{b}{Nonnegative initial regression vector}
+}
+\description{
+  \code{plot_spect} Function for plotting the spectroscopic
+  signal
+}
+\examples{
+# Setup mixture example
+n <- 1e3
+p <- 10
+nnm <- generate_nnm(n,p)
+
+set.seed(12345)
+X <- nnm$X
+b <- double(p)
+nComponents <- 3
+k <- sample(1:p,nComponents,replace=FALSE)
+b[k] <- matrix(runif(nComponents),ncol=1)
+y <- X\%*\%b + 0.25*matrix(abs(rnorm(n)),n,1)
+
+plot_spect(n,y,X,b,nnm)
+}
+\author{
+  Jocelyn T. Chi
+}
+

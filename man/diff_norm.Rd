@@ -1,0 +1,29 @@
+\name{diff_norm}
+\alias{diff_norm}
+\title{MM Algorithm - Normed Difference}
+\usage{
+  diff_norm(X, Z, omega)
+}
+\arguments{
+  \item{X}{Original data matrix}
+
+  \item{Z}{Model matrix for comparison}
+
+  \item{omega}{Set of unobserved indices}
+}
+\description{
+  \code{diff_norm} Function for finding the normed
+  difference between two matrices based on vector
+  containing indices of differing elements
+}
+\examples{
+Z <- matrix(rnorm(9,0,1),3,3)
+X <- matrix(rnorm(9,0,2),3,3)
+omega <- c(2,5,6)
+
+diff_norm(X,Z,omega)
+}
+\author{
+  Jocelyn T. Chi
+}
+

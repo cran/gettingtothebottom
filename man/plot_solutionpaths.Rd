@@ -1,0 +1,49 @@
+\name{plot_solutionpaths}
+\alias{plot_solutionpaths}
+\title{MM Algorithm - Plot results of solutionpaths function}
+\usage{
+  plot_solutionpaths(results)
+}
+\arguments{
+  \item{results}{Results from the solutionpaths function}
+}
+\description{
+  \code{plot_solutionpaths} Function for plotting results
+  of the solutionpaths function
+}
+\examples{
+# Generate a test matrix
+seed <- 12345
+m <- 100
+n <- 100
+r <- 3
+T <- testmatrix(m,n,r,seed=seed)
+
+# Add some noise to the test matrix
+E <- 0.1*matrix(rnorm(m*n),m,n)
+A <- T + E
+
+# Obtain a vector of unobserved entries
+temp <- makeOmega(m,n,percent=0.5)
+omega <- temp$omega
+
+# Remove unobserved entries from test matrix
+X <- A
+X[omega] <- NA
+
+# Make initial model matrix Z and find initial lambda
+Z <- matrix(0,m,n)
+lambda.start <- init.lambda(X,omega)
+lambdaseq_length=20
+tol <- 1e-2
+
+ans <- solutionpaths(A,X,Z,omega,lambda.start,tol=tol,
+   liveupdates=FALSE,lambdaseq_length=lambdaseq_length)
+
+# Plot using results from solutionpaths function
+plot_solutionpaths(ans)
+}
+\author{
+  Jocelyn T. Chi
+}
+

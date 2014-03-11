@@ -1,0 +1,66 @@
+\name{solutionpaths}
+\alias{solutionpaths}
+\title{MM Algorithm - Find the best fit lambda for a given problem based on an initial guess for lambda}
+\usage{
+  solutionpaths(A, X, Z, omega, lambda.start, tol = 1e-04,
+    liveupdates = FALSE, lambdaseq_length = 20)
+}
+\arguments{
+  \item{A}{Original data matrix (no unobserved entries)}
+
+  \item{X}{Data matrix (with unobserved entries)}
+
+  \item{Z}{Initial model matrix}
+
+  \item{omega}{Vector of unobserved entries in the data
+  matrix X}
+
+  \item{lambda.start}{Initial value for lambda}
+
+  \item{tol}{(Optional) Tolerance for convergence (Default:
+  1e-4)}
+
+  \item{liveupdates}{(Optional) Set to TRUE to view
+  progress of comparisons. (Default: FALSE)}
+
+  \item{lambdaseq_length}{(Optional) Length of lambda
+  sequence for convergence. (Default: 20)}
+}
+\description{
+  \code{solutionpaths} Function for finding the best fit
+  lambda for a given problem based on an initial guess for
+  lambda
+}
+\examples{
+# Generate a test matrix
+seed <- 12345
+m <- 100
+n <- 100
+r <- 3
+T <- testmatrix(m,n,r,seed=seed)
+
+# Add some noise to the test matrix
+E <- 0.1*matrix(rnorm(m*n),m,n)
+A <- T + E
+
+# Obtain a vector of unobserved entries
+temp <- makeOmega(m,n,percent=0.5)
+omega <- temp$omega
+
+# Remove unobserved entries from test matrix
+X <- A
+X[omega] <- NA
+
+# Make initial model matrix Z and find initial lambda
+Z <- matrix(0,m,n)
+lambda.start <- init.lambda(X,omega)
+lambdaseq_length=20
+tol <- 1e-2
+
+ans <- solutionpaths(A,X,Z,omega,lambda.start,tol=tol,
+   liveupdates=TRUE,lambdaseq_length=lambdaseq_length)
+}
+\author{
+  Jocelyn T. Chi
+}
+

@@ -1,0 +1,25 @@
+\name{plot_nnm}
+\alias{plot_nnm}
+\title{MM Algorithm - Plot NNM}
+\usage{
+  plot_nnm(nnm)
+}
+\arguments{
+  \item{nnm}{NNM object from generate_nnm function}
+}
+\description{
+  \code{plot_nnm} Function for plotting nnm
+}
+\examples{
+# Generate nonnegative matrix
+n <- 1e3
+p <- 10
+nnm <- generate_nnm(n,p)
+
+# Plot nonnegative matrix
+plot_nnm(nnm)
+}
+\author{
+  Jocelyn T. Chi
+}
+

@@ -1,0 +1,14 @@
+gettingtothebottom 2.0
+========================
+
+* Functions added for the 'Getting to the Bottom of 
+  Matrix Completion and Nonnegative Least Squares with 
+  the MM Algorithm' article.
+
+
+gettingtothebottom 1.0
+========================
+
+* Package release. Functions for the 'Getting to the 
+  Bottom of Regression with Gradient Descent' article 
+  included.

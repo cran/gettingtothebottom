@@ -1,0 +1,41 @@
+\name{init.lambda}
+\alias{init.lambda}
+\title{MM Algorithm - Initial lambda}
+\usage{
+  init.lambda(X, omega)
+}
+\arguments{
+  \item{X}{Original data matrix}
+
+  \item{omega}{Set of unobserved indices}
+}
+\description{
+  \code{init.lambda} Function for finding an initial value
+  for lambda
+}
+\examples{
+# Generate a test matrix
+seed <- 12345
+m <- 100
+n <- 100
+r <- 3
+T <- testmatrix(m,n,r,seed=seed)
+
+# Add some noise to the test matrix
+E <- 0.1*matrix(rnorm(m*n),m,n)
+A <- T + E
+
+# Obtain a vector of unobserved entries
+temp <- makeOmega(m,n,percent=0.5)
+omega <- temp$omega
+
+# Remove unobserved entries from test matrix
+X <- A
+X[omega] <- NA
+
+init.lambda(X,omega)
+}
+\author{
+  Jocelyn T. Chi
+}
+

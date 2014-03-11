@@ -1,0 +1,29 @@
+\name{makeOmega}
+\alias{makeOmega}
+\title{MM Algorithm - Generate Omega}
+\usage{
+  makeOmega(m, n, percent, seed = 123)
+}
+\arguments{
+  \item{m}{Number of rows in matrix to be generated}
+
+  \item{n}{Number of columns in matrix to be generated}
+
+  \item{percent}{Percent missing in matrix}
+
+  \item{seed}{Random seed}
+}
+\description{
+  \code{makeOmega} Function for generating omega vector of
+  missing values
+}
+\examples{
+m <- 1000
+n <- 1000
+percent <- 0.75
+omega <- makeOmega(m,n,percent)
+}
+\author{
+  Jocelyn T. Chi
+}
+

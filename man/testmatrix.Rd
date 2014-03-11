@@ -1,0 +1,29 @@
+\name{testmatrix}
+\alias{testmatrix}
+\title{MM Algorithm - Generate Test Matrix}
+\usage{
+  testmatrix(m, n, r, seed = 123)
+}
+\arguments{
+  \item{r}{Rank of matrix to be generated (r >= 2)}
+
+  \item{m}{Number of rows in matrix to be generated}
+
+  \item{n}{Number of columns in matrix to be generated}
+
+  \item{seed}{Random seed}
+}
+\description{
+  \code{testmatrix} Function for generating random rank-r
+  matrix
+}
+\examples{
+m <- 100
+n <- 1000
+r <- 5
+testmatrix(m,n,r)
+}
+\author{
+  Jocelyn T. Chi
+}
+

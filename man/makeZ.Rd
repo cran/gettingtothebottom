@@ -1,0 +1,22 @@
+\name{makeZ}
+\alias{makeZ}
+\title{MM Algorithm - Make Z}
+\usage{
+  makeZ(M, lambda)
+}
+\arguments{
+  \item{M}{Matrix containing observed entries}
+
+  \item{lambda}{Softhreshold parameter}
+}
+\description{
+  \code{makeZ} Function for making the Z matrix
+}
+\examples{
+A <- matrix(rnorm(9),3,3)
+makeZ(A,lambda=3)
+}
+\author{
+  Jocelyn T. Chi
+}
+

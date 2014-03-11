@@ -13,6 +13,9 @@
 #' @param tol (optional) tolerance for determining convergence
 #' @param intercept (optional) if TRUE, the model includes an estimate for the intercept
 #' @param autoscaling (optional) if TRUE, the function will automatically rescale the columns of X (divides each element in X by the maximal element in that column)
+#' 
+#' @import grid
+#' 
 #' @export
 #' 
 #' @examples

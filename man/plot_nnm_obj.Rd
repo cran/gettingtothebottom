@@ -1,0 +1,33 @@
+\name{plot_nnm_obj}
+\alias{plot_nnm_obj}
+\title{MM Algorithm - Plot NNM Objective}
+\usage{
+  plot_nnm_obj(y, X, b, max_iter = 100)
+}
+\arguments{
+  \item{y}{Nonnegative response}
+
+  \item{X}{Nonnegative design matrix}
+
+  \item{b}{Nonnegative initial regression vector}
+
+  \item{max_iter}{(Optional) Maximum number of iterations}
+}
+\description{
+  \code{plot_nnm_obj} Function for plotting the NNM
+  Objective Function
+}
+\examples{
+set.seed(12345)
+n <- 100
+p <- 3
+X <- matrix(rexp(n*p,rate=1),n,p)
+b <- matrix(runif(p),p,1)
+y <- X \%*\% b + matrix(abs(rnorm(n)),n,1)
+
+plot_nnm_obj(y,X,b)
+}
+\author{
+  Jocelyn T. Chi
+}
+

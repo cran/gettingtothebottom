@@ -1,0 +1,46 @@
+\name{nnls_mm}
+\alias{nnls_mm}
+\title{Nonnegative Least Squares via MM}
+\usage{
+  nnls_mm(y, X, b, max_iter = 100, tol = 1e-04)
+}
+\arguments{
+  \item{y}{Nonnegative response}
+
+  \item{X}{Nonnegative design matrix}
+
+  \item{b}{Nonnegative initial regression vector}
+
+  \item{max_iter}{Maximum number of iterations}
+
+  \item{tol}{Relative tolerance for convergence}
+}
+\description{
+  \code{nnls_mm} Iteratively computes the solution to the
+  nonnegative least squares problem via a
+  majorization-minimization algorithm.
+}
+\examples{
+set.seed(12345)
+n <- 100
+p <- 3
+X <- matrix(rexp(n*p,rate=1),n,p)
+b <- matrix(runif(p),p,1)
+y <- X \%*\% b + matrix(abs(rnorm(n)),n,1)
+
+## Setup mixture example
+n <- 1e3
+p <- 10
+nnm <- generate_nnm(n,p)
+set.seed(124)
+X <- nnm$X
+b <- double(p)
+nComponents <- 3
+k <- sample(1:p,nComponents,replace=FALSE)
+b[k] <- matrix(runif(nComponents),ncol=1)
+y <- X\%*\%b + 0.25*matrix(abs(rnorm(n)),n,1)
+
+# Obtain solution to mixture problem
+nnm_sol <- nnls_mm(y,X,runif(p))
+}
+

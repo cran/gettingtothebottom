@@ -1,0 +1,64 @@
+\name{matrixcomplete}
+\alias{matrixcomplete}
+\title{MM Algorithm - Matrix Completion}
+\usage{
+  matrixcomplete(X, Z, omega, lambda, maxiter = 100,
+    tol = 1e-04, liveupdates = TRUE)
+}
+\arguments{
+  \item{X}{Data matrix to be completed}
+
+  \item{Z}{Matrix containing last iterates}
+
+  \item{omega}{Vector containing indices of unobserved
+  entries}
+
+  \item{lambda}{Softhreshold parameter}
+
+  \item{maxiter}{(Optional) Max number of iterations
+  (Default: 100)}
+
+  \item{tol}{(Optional) Tolerance for convergence (Default:
+  1e-4)}
+
+  \item{liveupdates}{(Optional) If FALSE, no notification
+  will be given upon completion of each iteration.
+  (Default: TRUE)}
+}
+\description{
+  \code{matrixcomplete} Function for performing matrix
+  completion using a majorization-minimization algorithm
+  given data matrix X
+}
+\examples{
+# (Examples not run)
+# Generate an m-by-n test matrix of rank r
+# seed <- 12345
+# m <- 1000
+# n <- 1000
+# r <- 5
+# T <- testmatrix(m,n,r,seed=seed)
+
+# Add some noise to the test matrix
+# E <- 0.1*matrix(rnorm(m*n),m,n)
+# A <- T + E
+
+# Obtain a vector of unobserved entries
+# temp <- makeOmega(m,n,percent=0.5)
+# omega <- temp$omega
+
+# Remove unobserved entries from test matrix
+# X <- A
+# X[omega] <- NA
+
+# Make initial model matrix Z and find initial lambda
+# Z <- matrix(0,m,n)
+# lambda <- init.lambda(X,omega)
+
+# Example (Not run)
+# Sol <- matrixcomplete(X,Z,omega,lambda)
+}
+\author{
+  Jocelyn T. Chi
+}
+

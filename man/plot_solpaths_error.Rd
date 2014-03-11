@@ -1,0 +1,53 @@
+\name{plot_solpaths_error}
+\alias{plot_solpaths_error}
+\title{MM Algorithm - Function for plotting the imputed values against the truth for minimum error solution}
+\usage{
+  plot_solpaths_error(A, omega, ans)
+}
+\arguments{
+  \item{A}{Initial test matrix of fully observed entries}
+
+  \item{omega}{Vector of unobserved entries}
+
+  \item{ans}{Results from solpaths function}
+}
+\description{
+  \code{plot_solpaths_error} Function for plotting the
+  imputed values against the truth for minimium error
+  solution found using solutionpaths function
+}
+\examples{
+# Generate a test matrix
+seed <- 12345
+m <- 100
+n <- 100
+r <- 3
+T <- testmatrix(m,n,r,seed=seed)
+
+# Add some noise to the test matrix
+E <- 0.1*matrix(rnorm(m*n),m,n)
+A <- T + E
+
+# Obtain a vector of unobserved entries
+temp <- makeOmega(m,n,percent=0.5)
+omega <- temp$omega
+
+# Remove unobserved entries from test matrix
+X <- A
+X[omega] <- NA
+
+# Make initial model matrix Z and find initial lambda
+Z <- matrix(0,m,n)
+lambda.start <- init.lambda(X,omega)
+lambdaseq_length=20
+tol <- 1e-2
+
+ans <- solutionpaths(A,X,Z,omega,lambda.start,tol=tol,
+   liveupdates=FALSE,lambdaseq_length=lambdaseq_length)
+
+plot_solpaths_error(A,omega,ans)
+}
+\author{
+  Jocelyn T. Chi
+}
+
