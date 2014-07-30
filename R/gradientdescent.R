@@ -46,7 +46,8 @@
 #' lm(y~X)
 #' 
 #' # Notice that the algorithm may diverge if the step size (alpha) is not small enough
-#' simple_ex2 <- gdescent(f,grad_f,X,y,alpha=0.05,liveupdates=TRUE)
+#' # THE FOLLOWING NOT RUN
+#' # simple_ex2 <- gdescent(f,grad_f,X,y,alpha=0.05,liveupdates=TRUE)
 #' # The live updates show the norm of the gradient in each iteration.  
 #' # We notice that the norm of the gradient diverges when alpha is not small enough.
 #' 
@@ -64,10 +65,12 @@
 #' data(moviebudgets)
 #' X <- as.matrix(moviebudgets$budget)
 #' y <- as.vector(moviebudgets$rating)
-#' movies1 <- gdescent(f,grad_f,X,y,1e-4,5000)
+#' # THE FOLLOWING NOT RUN
+#' # movies1 <- gdescent(f,grad_f,X,y,1e-4,5000)
 #' 
 #' # We can compare our gradient descent results with what we get if we use the lm function
-#' lm(y~X)
+#' # THE FOLLOWING NOT RUN
+#' # lm(y~X)
 #' 
 #' # Compare the above result with what we get without feature scaling 
 #' # Not run:
@@ -90,10 +93,12 @@
 #' B <- baltimoreyouth
 #' X <- matrix(c(B$farms11,B$susp11,B$sclemp11,B$abshs11), nrow=nrow(B), byrow=FALSE)
 #' y <- as.vector(B$compl11)
-#' meals_graduations <- gdescent(f,grad_f,X,y,0.01,12000)
+#' # THE FOLLOWING NOT RUN
+#' # meals_graduations <- gdescent(f,grad_f,X,y,0.01,12000)
 #' 
 #' # We can compare our gradient descent results with what we get if we use the lm function
-#' lm(y~X)
+#' # THE FOLLOWING NOT RUN
+#' # lm(y~X)
 #' 
 #' #--------------------------------------------------------
 #' # EXAMPLE 4 - Logistic Regression
@@ -116,11 +121,13 @@
 #' }
 #' alpha = 1/(0.25*svd(cbind(1,X))$d[1]**2)
 #' 
-#' # Use gradient descent algorithm to solve logistic regression problem
-#' logistic_ex <- gdescent(l,grad_l,X,y,alpha=alpha,iter=15000)
+#' # Use gradient descent algorithm to solve logistic regression problem 
+#' # THE FOLLOWING NOT RUN
+#' # logistic_ex <- gdescent(l,grad_l,X,y,alpha=alpha,iter=15000)
 #' 
 #' # Use glm function to solve logistic regression problem
-#' glm(y~X, family=binomial)
+#' # THE FOLLOWING NOT RUN
+#' # glm(y~X, family=binomial)
 #' 
 #' @author Jocelyn T. Chi
 #' 

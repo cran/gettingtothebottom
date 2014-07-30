@@ -80,7 +80,7 @@ NULL
 #' @param length Length of movie (in minutes)
 #' @param rating Average IMDB user rating
 #' @param votes Number of IMDB users who rated the movie
-#' @param r1-10 Distribution of votes for each rating, to mid point of nearest decile: 0 = no votes, 4.5 = 1-9% votes, 14.5 = 11-19% of votes, etc. Due to rounding errors these may not sum to 100.
+#' @param r1-10 Distribution of votes for each rating, to mid point of nearest decile: 0 = no votes, 4.5 = 1-9 percent votes, 14.5 = 11-19 percent of votes, etc. Due to rounding errors these may not sum to 100.
 #' @param mpaa MPAA rating
 #' @param genre Binary variables indicating whether movie belongs to any of the following genres: action, animation, comedy, drama, documentary, romance, short
 #' 
@@ -103,9 +103,73 @@ NULL
 #' @param length Length of movie (in minutes)
 #' @param rating Average IMDB user rating
 #' @param votes Number of IMDB users who rated the movie
-#' @param r1-10 Distribution of votes for each rating, to mid point of nearest decile: 0 = no votes, 4.5 = 1-9% votes, 14.5 = 11-19% of votes, etc. Due to rounding errors these may not sum to 100.
+#' @param r1-10 Distribution of votes for each rating, to mid point of nearest decile: 0 = no votes, 4.5 = 1-9 percent votes, 14.5 = 11-19 percent of votes, etc. Due to rounding errors these may not sum to 100.
 #' @param mpaa MPAA rating
 #' @param genre Binary variables indicating whether movie belongs to any of the following genres: action, animation, comedy, drama, documentary, romance, short
 #' 
 NULL
 
+#' The Diet Problem: "Nutritive Values of Common Foods per Dollar of Expenditure, August 15, 1944", from George Stigler's 1945 paper on "The Cost of Subsistence"
+#'
+#' A dataset of 10 rows and 14 columns describing 1944 prices and nutritional data for 14 food commodities.  Obtained from George Stigler's 1945 paper on "The Cost of Subsistence".
+#'
+#' @source George J. Stigler, "The Cost of Subsistence", Journal of Farm Economics, Vol. 27, No. 2 (May, 1945), pp. 303-314.
+#' \url{http://www.jstor.org/stable/1231810}
+#'
+#' @docType data
+#' @keywords datasets
+#' @format A data frame with 10 rows and 14 columns
+#' @name stigler
+#' 
+#' @param Calories Calories (in kilocalories) per dollar
+#' @param Protein  Protein (in grams) per dollar
+#' @param Calcium Calcium (in grams) per dollar
+#' @param Iron Iron (in milligrams) per dollar
+#' @param Vitamin.A Vitamin A (in 1000 Interntional Units) per dollar
+#' @param Thiamine Thiamine (in milligrams) per dollar
+#' @param Riboflavin Riboflavin (in milligrams) per dollar
+#' @param Niacin Niacin (in milligrams) per dollar
+#' @param Ascorbic.Acid Ascorbin Acid (in milligrams) per dollar
+#' 
+NULL
+
+#' The Diet Problem: "Daily Allowances of Nutrients for a Moderately Active Man (weighing 154 pounds)" from George Stigler's 1945 paper on "The Cost of Subsistence"
+#'
+#' A vector describing 1943 dietary requirements for a "moderately active" man of 154 pounds.  Obtained from Table 1 of George Stigler's 1945 paper on "The Cost of Subsistence".
+#'
+#' @source George J. Stigler, "The Cost of Subsistence", Journal of Farm Economics, Vol. 27, No. 2 (May, 1945), pp. 303-314.
+#' \url{http://www.jstor.org/stable/1231810}
+#'
+#' @docType data
+#' @keywords datasets
+#' @format A vector of length 9
+#' @name nutrition
+#' 
+#' @param Calories Calories (in kilocalories)
+#' @param Protein  Protein (in grams)
+#' @param Calcium Calcium (in grams)
+#' @param Iron Iron (in milligrams)
+#' @param Vitamin.A Vitamin A (in 1000 Interntional Units)
+#' @param Thiamine Thiamine (in milligrams)
+#' @param Riboflavin Riboflavin (in milligrams)
+#' @param Niacin Niacin (in milligrams)
+#' @param Ascorbic.Acid Ascorbin Acid (in milligrams)
+#'
+NULL
+
+#' Engel's Law - Engel Food Expenditures Data from the quantreg package for R
+#'
+#' Data on income and food expenditure for 235 working class households in 1857 Belgium.
+#'
+#' @source This dataset was used in Koenker and Bassett (1982) and obtained from the quantreg package for R.  Citations:  Koenker, R. and Bassett, G (1982) Robust Tests of Heteroscedasticity based on Regression Quantiles; Econometrica 50, 43-61.
+#' \url{http://CRAN.R-project.org/package=quantreg}
+#'
+#' @docType data
+#' @keywords datasets
+#' @format A dataset containing 235 observations on 2 variables
+#' @name engel
+#'
+#' @param income Annual household income (Belgian francs) 
+#' @param foodexp Annual household food expenditure (Belgian francs)
+#'
+NULL

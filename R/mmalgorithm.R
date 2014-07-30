@@ -1,6 +1,6 @@
 #' MM Algorithm - Softhreshold Function
 #' 
-#' \code{softthreshold} Function for computing the softhreshold
+#' \code{softhreshold} Function for computing the softhreshold
 #' 
 #' @param x Vector of values to be softhresholded
 #' @param lambda Softhreshold parameter
