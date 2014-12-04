@@ -1,3 +1,17 @@
+gettingtothebottom 3.2
+========================
+
+* Version 3.2: Reverted package to 2.0 state.
+
+
+gettingtothebottom 3.1
+========================
+
+* Version 3.1: Added functions for the trend filtering 
+  example in the 'Getting to the Bottom of Regression 
+  Quantiles and Friends with Linear Programming' article.
+
+
 gettingtothebottom 3.0
 ========================
 
